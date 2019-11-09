@@ -1,0 +1,23 @@
+server:
+  port: 10010
+spring:
+  application:
+    name: zuul
+
+#zuul:
+#  routes:
+#    service-provider: #路由名称,可以随便写
+#      path: /service-provider/**  #这个前缀的地址会路由到8081
+#      serviceId: service-provider
+#      #url: http://localhost:8081   #被写死了
+#这些其实都不用陪...  只要输入访问的微服务名称就行了
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka
+zuul:
+  routes:
+    service-provider: /user/**   #相当于给微服务取别名
+    service-consumer: /consumer/**
+  prefix: /api   #表示这是调用网关的api

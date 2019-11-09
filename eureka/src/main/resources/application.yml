@@ -1,0 +1,14 @@
+server:
+  port: 10086
+
+spring:
+  application:
+    name: eureka #将来作为微服务名称注册到eureka容器
+
+eureka:
+  server:
+    eviction-interval-timer-in-ms: 5000  #失效服务时间  剔除无效连接的间隔时间
+    enable-self-preservation: false  #关闭自我保护状态
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka #访问时不需要路径   #两个端口的eureka相互注册
