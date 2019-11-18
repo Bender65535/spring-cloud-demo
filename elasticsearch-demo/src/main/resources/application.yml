@@ -1,0 +1,5 @@
+spring:
+  data:
+    elasticsearch:
+      cluster-name: elasticsearch
+      cluster-nodes: localhost:9300  #9300作为Tcp协议，jar之间就是通过tcp协议通讯
